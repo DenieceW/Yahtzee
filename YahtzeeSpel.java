@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class YahtzeeSpel {
     Scanner scanner = new Scanner(System.in);
     ArrayList<Dobbelsteen> dobbelstenen = new ArrayList<Dobbelsteen>();
+    Speler speler = new Speler();
     Worp worp = new Worp();
     char[] tempArray = new char[5];
     int[] blokkeerArray = {0,0,0,0,0};
@@ -34,18 +35,20 @@ public class YahtzeeSpel {
             if(invoer.equals("q")){
                 break;
             }
-            if(invoer.equals("0")){
+            if(invoer.equals("0")){ //als invoer leeg is, dan weer opnieuw dobbelstenen gooien met random getallen
                 System.out.println("WORP " + rondes);
                 gooiDobbelstenen();
                 printDobbelstenen();
-
             }else
-                vasthouden(invoer);
+                vasthouden(invoer); //als invoer niet leeg is, dan de dobbelstenen vasthouden die de ingevoerde nummers
                 System.out.println("");
                 System.out.println("WORP " + rondes);
-                opnieuwGooien();
-                Arrays.fill(blokkeerArray, 0);
+                opnieuwGooien(); //hier wordt opnieuw gegooid, exclusief de dobbelstenen die vast zitten
+                Arrays.fill(blokkeerArray, 0); //blokkeerarray weer vullen met 0, zodat de vorige posities niet meegenomen worden.
         }
+        speler.toonWorpen();
+        System.out.println(speler.worpGeschiedenis.size());
+
     }
 
     int[] gooiDobbelstenen(){
@@ -54,6 +57,7 @@ public class YahtzeeSpel {
             worp.uitslagWorp[i] = dobbelstenen.get(i).werpen();
         }
         rondes++;
+        speler.worpGeschiedenis.add(worp);
         return worp.uitslagWorp;
     }
 

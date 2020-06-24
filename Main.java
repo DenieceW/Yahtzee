@@ -4,8 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
         YahtzeeSpel yahtzeeSpel = new YahtzeeSpel();
-        yahtzeeSpel.addSpelers();
-        yahtzeeSpel.gameOn();
+  //      yahtzeeSpel.addSpelers();
+        yahtzeeSpel.spelen();
 
     }
 }

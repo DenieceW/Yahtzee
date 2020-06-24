@@ -12,7 +12,7 @@ public class YahtzeeSpel {
     void spelen(){
         worp.getDobbelstenen();
         System.out.println("Gooi de dobbelstenen, druk 'ENTER'");
-        String invoer = scanner.nextLine();
+        scanner.nextLine();
 
         //beginnen met de allereerste worp
         worp.printRonde();

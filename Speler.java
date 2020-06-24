@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Speler {
     ArrayList<Worp> worpGeschiedenis = new ArrayList<Worp>();
+    Worp worp = new Worp();
 
 
     void addWorp(Worp worp){
@@ -12,7 +13,7 @@ public class Speler {
 
     void toonWorpen(){
         for (Worp worp : worpGeschiedenis){
-            worp.worp();
+            worp.toonWorp();
         }
     }
 }

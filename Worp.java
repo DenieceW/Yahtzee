@@ -15,7 +15,7 @@ public class Worp {
         System.out.println("WORP " + rondes);
     }
 
-    void getDobbelstenen(){
+    void getDobbelstenen(){ //hier worden 5 dobbelstenen toegevoegd aan de arraylijst 'dobbelstenen'
         for(int i = 0; i < 5; i++){
             dobbelstenen.add(new Dobbelsteen());
         }
@@ -40,8 +40,8 @@ public class Worp {
 
     int[] opnieuwGooien(){
         for(int i = 0; i < dobbelstenen.size(); i++){
-            if(blokkeerArray[i] == 0){
-                uitslagWorp[i] = dobbelstenen.get(i).werpen();
+            if(blokkeerArray[i] == 0){ //als de getallen van de blokkeer array op 0 staan op die positie,
+                uitslagWorp[i] = dobbelstenen.get(i).werpen(); //dan mogen alleen de dobbelstenen die op dezelfde positie staan van de uitslagworp array weer dobbelen
             }
         }
         Arrays.fill(blokkeerArray, 0); //blokkeerarray weer vullen met 0, zodat de vorige posities niet meegenomen worden.
@@ -54,7 +54,7 @@ public class Worp {
         }
         System.out.println("");
 
-        for (int i : uitslagWorp){
+        for (int i : uitslagWorp){ //print het aantal oogjes van de dobbelstenen
             System.out.print(i + " ");
         }
         System.out.println(" ");

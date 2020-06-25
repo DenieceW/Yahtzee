@@ -46,11 +46,13 @@ public class Worp {
     }
 
     void toonWorp(){
+        System.out.print("Positie:        ");
         for(int i = 1; i <= 5; i++){ //prints de posities van de dobbelstenen 1 t/m 5
             System.out.print(i + " ");
         }
-        System.out.println("");
 
+        System.out.println(" ");
+        System.out.print("Aantal ogen:    ");
         for (int i : uitslagWorp){ //print het aantal oogjes van de dobbelstenen
             System.out.print(i + " ");
         }

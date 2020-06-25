@@ -24,6 +24,7 @@ public class Speler {
     }
 
     void toonWorpGeschiedenis(){
+        System.out.println("Worpgeschiedenis: ");
         for(Worp worp : worpGeschiedenis){
             System.out.println(Arrays.toString(worp.getUitslagWorp()));
         }

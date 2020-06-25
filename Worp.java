@@ -3,17 +3,11 @@ package com.miniopdrachtenqien;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-
 public class Worp {
     ArrayList<Dobbelsteen> dobbelstenen = new ArrayList<Dobbelsteen>();
     int[] uitslagWorp = new int[5];
     int[] blokkeerArray = {0,0,0,0,0};
     char[] tempArray = new char[5];
-    int rondes = 1;
-    
-    void printRonde(){
-        System.out.println("WORP " + rondes);
-    }
 
     void getDobbelstenen(){ //hier worden 5 dobbelstenen toegevoegd aan de arraylijst 'dobbelstenen'
         for(int i = 0; i < 5; i++){
@@ -26,8 +20,11 @@ public class Worp {
             dobbelstenen.get(i).werpen();
             uitslagWorp[i] = dobbelstenen.get(i).werpen();
         }
-        rondes++;
         return uitslagWorp;
+    }
+
+    int[] getUitslagWorp(){
+        return this.uitslagWorp;
     }
 
     int[] vasthouden(String invoer){ //Dankzij Fien:-)

@@ -11,31 +11,31 @@ public class YahtzeeSpel {
 
     void spelen() {
         setAantalSpelers();
+
         while (gameOn) {
 
                 for (Speler speler : spelerArrayList) {
                     Worp worp = new Worp();
                     System.out.println(speler.getNaam() + " mag gaan dobbelen. Druk 'ENTER'");
                     String invoer = scanner.nextLine();
-                        if(invoer.isEmpty()){
-                            printRonde();
-                            worp.getDobbelstenen();
-                            worp.gooiDobbelstenen();
-                            worp.toonWorp();
-                            System.out.println("Welke posities wil je vasthouden? Vul de posities in of druk ENTER als je niks wil vasthouden");
-                            System.out.print("INVOER: ");
-                            invoer = scanner.nextLine().trim();
-                            worp.vasthouden(invoer); //als invoer niet leeg is, dan de dobbelstenen vasthouden op de positie van de ingevoerde nummers
-                            printRonde();
-                            worp.opnieuwGooien(); //hier wordt opnieuw gegooid, exclusief de dobbelstenen die vast zitten
-                            worp.toonWorp();
-                            speler.addWorp(worp); //hier wordt de worp opgeslagen
-                            speler.toonWorpGeschiedenis(); //hier wordt de worpgeschiedenis getoond.
-                        }
                     if(invoer.equals("q")){
-                        gameOn=false;
+                        gameOn = false;
                     }
-
+                    if(invoer.isEmpty()){
+                        printRonde();
+                        worp.getDobbelstenen();
+                        worp.gooiDobbelstenen();
+                        worp.toonWorp();
+                        System.out.println("Welke posities wil je vasthouden? Vul de posities in of druk ENTER als je niks wil vasthouden");
+                        System.out.print("INVOER: ");
+                        invoer = scanner.nextLine().trim();
+                        worp.vasthouden(invoer); //als invoer niet leeg is, dan de dobbelstenen vasthouden op de positie van de ingevoerde nummers
+                        printRonde();
+                        worp.opnieuwGooien(); //hier wordt opnieuw gegooid, exclusief de dobbelstenen die vast zitten
+                        worp.toonWorp();
+                        speler.addWorp(worp); //hier wordt de worp opgeslagen
+                        speler.toonWorpGeschiedenis(); //hier wordt de worpgeschiedenis getoond.
+                    }
                 }
                 System.out.println(" ");
                 System.out.println("Iedereen heeft " + rondes + " keer gedobbeld");

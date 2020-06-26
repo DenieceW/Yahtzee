@@ -11,16 +11,16 @@ public class Worp {
 
     void getDobbelstenen(){ //hier worden 5 dobbelstenen toegevoegd aan de arraylijst 'dobbelstenen'
         for(int i = 0; i < 5; i++){
-            dobbelstenen.add(new Dobbelsteen());
+            this.dobbelstenen.add(new Dobbelsteen());
         }
     }
 
     int[] gooiDobbelstenen(){
-        for (int i = 0; i < dobbelstenen.size(); i++){
-            dobbelstenen.get(i).werpen();
-            uitslagWorp[i] = dobbelstenen.get(i).werpen();
+        for (int i = 0; i < this.dobbelstenen.size(); i++){
+            this.dobbelstenen.get(i).werpen();
+            this.uitslagWorp[i] = this.dobbelstenen.get(i).werpen();
         }
-        return uitslagWorp;
+        return this.uitslagWorp;
     }
 
     int[] getUitslagWorp(){
@@ -28,21 +28,21 @@ public class Worp {
     }
 
     int[] vasthouden(String invoer){ //Dankzij Fien:-)
-        tempArray = invoer.toCharArray();
-        for (char c : tempArray) {
-            blokkeerArray[Character.getNumericValue(c) - 1] = 1;
+        this.tempArray = invoer.toCharArray();
+        for (char c : this.tempArray) {
+            this.blokkeerArray[Character.getNumericValue(c) - 1] = 1;
         }
-        return blokkeerArray;
+        return this.blokkeerArray;
     }
 
     int[] opnieuwGooien(){
-        for(int i = 0; i < dobbelstenen.size(); i++){
-            if(blokkeerArray[i] == 0){ //als de getallen van de blokkeer array op 0 staan op die positie,
-                uitslagWorp[i] = dobbelstenen.get(i).werpen(); //dan mogen alleen de dobbelstenen die op dezelfde positie staan van de uitslagworp array weer dobbelen
+        for(int i = 0; i < this.dobbelstenen.size(); i++){
+            if(this.blokkeerArray[i] == 0){ //als de getallen van de blokkeer array op 0 staan op die positie,
+                this.uitslagWorp[i] = this.dobbelstenen.get(i).werpen(); //dan mogen alleen de dobbelstenen die op dezelfde positie staan van de uitslagworp array weer dobbelen
             }
         }
-        Arrays.fill(blokkeerArray, 0); //blokkeerarray weer vullen met 0, zodat de vorige posities niet meegenomen worden.
-        return uitslagWorp;
+        Arrays.fill(this.blokkeerArray, 0); //blokkeerarray weer vullen met 0, zodat de vorige posities niet meegenomen worden.
+        return this.uitslagWorp;
     }
 
     void toonWorp(){
@@ -53,7 +53,7 @@ public class Worp {
 
         System.out.println(" ");
         System.out.print("Aantal ogen:    ");
-        for (int i : uitslagWorp){ //print het aantal oogjes van de dobbelstenen
+        for (int i : this.uitslagWorp){ //print het aantal oogjes van de dobbelstenen
             System.out.print(i + " ");
         }
         System.out.println(" ");

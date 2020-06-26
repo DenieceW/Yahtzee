@@ -38,14 +38,14 @@ public class YahtzeeSpel {
                     }
                 }
                 System.out.println(" ");
-                System.out.println("Iedereen heeft " + rondes + " keer gedobbeld");
+                System.out.println("Iedereen heeft " + this.rondes + " keer gedobbeld");
                 System.out.println("---------------------------------------");
-                rondes++;
+                this.rondes++;
         }
     }
 
     void printRonde(){
-        System.out.println("WORP " + rondes);
+        System.out.println("WORP " + this.rondes);
     }
 
     void setAantalSpelers () {

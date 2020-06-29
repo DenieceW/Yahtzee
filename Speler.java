@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Speler {
-    Worp worp;
-    ArrayList<Worp> worpGeschiedenis;
-    String naam;
+    private Worp worp;
+    private ArrayList<Worp> worpGeschiedenis;
+    private String naam;
 
     Speler(String naam){
         this.worp = new Worp();
-        worpGeschiedenis = new ArrayList<Worp>();
+        this.worpGeschiedenis = new ArrayList<Worp>();
         this.naam = naam;
 
     }
@@ -20,12 +20,12 @@ public class Speler {
     }
 
     void addWorp(Worp worp){
-        worpGeschiedenis.add(worp);
+        this.worpGeschiedenis.add(worp);
     }
 
     void toonWorpGeschiedenis(){
         System.out.println("Worpgeschiedenis: ");
-        for(Worp worp : worpGeschiedenis){
+        for(Worp worp : this.worpGeschiedenis){
             System.out.println(Arrays.toString(worp.getUitslagWorp()));
         }
     }

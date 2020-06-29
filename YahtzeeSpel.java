@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class YahtzeeSpel {
-    ArrayList<Speler> spelerArrayList = new ArrayList<Speler>();
-    Scanner scanner = new Scanner(System.in);
-    int rondes = 1;
-    boolean gameOn = true;
+    private final ArrayList<Speler> spelerArrayList = new ArrayList<Speler>();
+    private final Scanner scanner = new Scanner(System.in);
+    private int rondes = 1;
+    private boolean gameOn = true;
 
     void spelen() {
         setAantalSpelers();
@@ -23,7 +23,7 @@ public class YahtzeeSpel {
                     }
                     if(invoer.isEmpty()){
                         printRonde();
-                        worp.getDobbelstenen();
+                        worp.setDobbelstenen();
                         worp.gooiDobbelstenen();
                         worp.toonWorp();
                         System.out.println("Welke posities wil je vasthouden? Vul de posities in of druk ENTER als je niks wil vasthouden");
@@ -44,11 +44,11 @@ public class YahtzeeSpel {
         }
     }
 
-    void printRonde(){
+    private void printRonde(){
         System.out.println("WORP " + this.rondes);
     }
 
-    void setAantalSpelers () {
+    private void setAantalSpelers () {
         System.out.print("Kies het aantal spelers: ");
         int aantalSpelers = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < aantalSpelers; i++) {

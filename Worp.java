@@ -5,11 +5,11 @@ import java.util.Arrays;
 
 public class Worp {
     ArrayList<Dobbelsteen> dobbelstenen = new ArrayList<Dobbelsteen>();
-    int[] uitslagWorp = new int[5];
-    int[] blokkeerArray = {0,0,0,0,0};
-    char[] tempArray = new char[5];
+    private int[] uitslagWorp = new int[5];
+    private int[] blokkeerArray = {0,0,0,0,0};
+    private char[] tempArray = new char[5];
 
-    void getDobbelstenen(){ //hier worden 5 dobbelstenen toegevoegd aan de arraylijst 'dobbelstenen'
+    void setDobbelstenen(){ //hier worden 5 dobbelstenen toegevoegd aan de arraylijst 'dobbelstenen'
         for(int i = 0; i < 5; i++){
             this.dobbelstenen.add(new Dobbelsteen());
         }
